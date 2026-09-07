@@ -45,15 +45,17 @@ mobileFireBtn.addEventListener('mouseleave', () => isMobileFiring = false);
 mobileFireBtn.addEventListener('touchstart', e => { e.preventDefault(); isMobileFiring = true; });
 mobileFireBtn.addEventListener('touchend', () => isMobileFiring = false);
 mobileLeftBtn.addEventListener('mousedown', () => { keys.Left = true; });
-mobileLeftBtn.addEventListener('mouseup', () => { keys.Left = false; });
-mobileLeftBtn.addEventListener('mouseleave', () => { keys.Left = false; });
-mobileLeftBtn.addEventListener('touchstart', (e) => { e.preventDefault(); keys.Left = true; });
-mobileLeftBtn.addEventListener('touchend', () => { keys.Left = false; });
-mobileRightBtn.addEventListener('mousedown', () => { keys.Right = true; });
-mobileRightBtn.addEventListener('mouseup', () => { keys.Right = false; });
-mobileRightBtn.addEventListener('mouseleave', () => { keys.Right = false; });
-mobileRightBtn.addEventListener('touchstart', (e) => { e.preventDefault(); keys.Right = true; });
-mobileRightBtn.addEventListener('touchend', () => { keys.Right = false; });
+mobileLeftBtn.addEventListener('mousedown', () => { keys.ArrowLeft = true; });
+mobileLeftBtn.addEventListener('mouseup', () => { keys.ArrowLeft = false; });
+mobileLeftBtn.addEventListener('mouseleave', () => { keys.ArrowLeft = false; });
+mobileLeftBtn.addEventListener('touchstart', (e) => { e.preventDefault(); keys.ArrowLeft = true; });
+mobileLeftBtn.addEventListener('touchend', () => { keys.ArrowLeft = false; });
+
+mobileRightBtn.addEventListener('mousedown', () => { keys.ArrowRight = true; });
+mobileRightBtn.addEventListener('mouseup', () => { keys.ArrowRight = false; });
+mobileRightBtn.addEventListener('mouseleave', () => { keys.ArrowRight = false; });
+mobileRightBtn.addEventListener('touchstart', (e) => { e.preventDefault(); keys.ArrowRight = true; });
+mobileRightBtn.addEventListener('touchend', () => { keys.ArrowRight = false; });
 
 
 function fireLaser() {
