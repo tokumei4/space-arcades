@@ -9,6 +9,9 @@ const gameOverScreen = document.getElementById('gameOverScreen');
 const startBtn = document.getElementById('startBtn');
 const restartBtn = document.getElementById('restartBtn');
 const mobileFireBtn = document.getElementById('mobileFireBtn');
+const mobileLeftBtn = document.getElementById('mobileLeftBtn');
+const mobileRightBtn = document.getElementById('mobileRightBtn');
+
 
 let score = 0, health = 100, isGameOver = false, gameStarted = false, gameTimer = 0, dangerLevel = 1.0;
 let bossActive = false, bossSpawnScoreThreshold = 100, bossProjectiles = [], lasers = [], aliens = [], stars = [], powerups = [], spawnTimeoutId = null;
@@ -41,6 +44,17 @@ mobileFireBtn.addEventListener('mouseup', () => isMobileFiring = false);
 mobileFireBtn.addEventListener('mouseleave', () => isMobileFiring = false);
 mobileFireBtn.addEventListener('touchstart', e => { e.preventDefault(); isMobileFiring = true; });
 mobileFireBtn.addEventListener('touchend', () => isMobileFiring = false);
+mobileLeftBtn.addEventListener('mousedown', () => { keys.Left = true; });
+mobileLeftBtn.addEventListener('mouseup', () => { keys.Left = false; });
+mobileLeftBtn.addEventListener('mouseleave', () => { keys.Left = false; });
+mobileLeftBtn.addEventListener('touchstart', (e) => { e.preventDefault(); keys.Left = true; });
+mobileLeftBtn.addEventListener('touchend', () => { keys.Left = false; });
+mobileRightBtn.addEventListener('mousedown', () => { keys.Right = true; });
+mobileRightBtn.addEventListener('mouseup', () => { keys.Right = false; });
+mobileRightBtn.addEventListener('mouseleave', () => { keys.Right = false; });
+mobileRightBtn.addEventListener('touchstart', (e) => { e.preventDefault(); keys.Right = true; });
+mobileRightBtn.addEventListener('touchend', () => { keys.Right = false; });
+
 
 function fireLaser() {
     const b = speedBoostTimer > 0, s = spreadShotTimer > 0, lx = player.x + player.width / 2 - 3, ly = player.y;
