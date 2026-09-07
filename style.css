@@ -1,138 +1,40 @@
-* {
-    box-sizing: border-box;
-    user-select: none;
-}
-
-body {
-    background-color: #05050a;
-    color: #fff;
-    font-family: 'Segoe UI', Roboto, Arial, sans-serif;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    margin: 0;
-    overflow: hidden;
-}
-
-.game-container {
-    position: relative;
-    box-shadow: 0 0 40px rgba(0, 212, 255, 0.25);
-    border-radius: 16px;
-    overflow: hidden;
-}
-
-.ui-panel {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    padding: 20px;
-    display: flex;
-    justify-content: space-between;
-    font-weight: bold;
-    font-size: 18px;
-    letter-spacing: 2px;
-    text-shadow: 0 0 8px rgba(0, 0, 0, 0.8);
-    pointer-events: none;
-    z-index: 5;
-}
-
-.score-box { color: #00d4ff; }
-.mode-box { color: #ffeb3b; font-size: 16px; animation: pulse 1.5s infinite; }
-.health-box { color: #ff3366; }
-
-canvas {
-    background-color: #010103;
-    display: block;
-    border: 2px solid #1a2238;
-    border-radius: 16px;
-}
-
+/* Touch Action controller layout system */
 .controls-overlay {
     position: absolute;
     bottom: 25px;
-    right: 25px;
+    left: 0;
+    width: 100%;
+    padding: 0 25px;
+    display: flex;
+    justify-content: space-between; /* Puts arrows on left, fire on right */
+    align-items: center;
+    pointer-events: none; /* Let background elements read user clicks */
     z-index: 6;
 }
 
-#mobileFireBtn {
-    background-color: #ff3366;
-    color: white;
-    width: 85px;
-    height: 85px;
-    border-radius: 50%;
-    font-size: 16px;
-    font-weight: bold;
-    border: 3px solid rgba(255,255,255,0.4);
-    box-shadow: 0 0 20px rgba(255, 51, 102, 0.6);
-}
-
-#mobileFireBtn:active {
-    background-color: #b3103b;
-    transform: scale(0.9);
-}
-
-.overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(3, 4, 12, 0.92);
+.movement-arrows {
     display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    z-index: 10;
+    gap: 15px;
+    pointer-events: auto;
 }
 
-.overlay h1 {
-    font-size: 46px;
+#mobileLeftBtn, #mobileRightBtn {
+    background-color: rgba(31, 40, 51, 0.8);
     color: #00d4ff;
-    margin-bottom: 10px;
-    letter-spacing: 5px;
-    text-shadow: 0 0 20px rgba(0, 212, 255, 0.6);
+    width: 70px;
+    height: 70px;
+    border-radius: 12px;
+    font-size: 24px;
+    border: 2px solid #00d4ff;
+    box-shadow: 0 0 10px rgba(0, 212, 255, 0.3);
 }
 
-.overlay p {
-    color: #a5b4fc;
-    margin-bottom: 30px;
-    font-size: 15px;
-    text-align: center;
-    padding: 0 20px;
-}
-
-#gameOverScreen h1 {
-    color: #ff3366;
-    text-shadow: 0 0 20px rgba(255, 51, 102, 0.6);
-}
-
-.hidden { display: none !important; }
-
-button {
-    border: none;
-    font-weight: bold;
-    cursor: pointer;
-    transition: transform 0.1s, background-color 0.2s;
-}
-
-#startBtn, #restartBtn {
+#mobileLeftBtn:active, #mobileRightBtn:active {
     background-color: #00d4ff;
-    color: #05050a;
-    padding: 14px 35px;
-    font-size: 16px;
-    border-radius: 30px;
-    box-shadow: 0 5px 15px rgba(0, 212, 255, 0.4);
+    color: #020208;
 }
 
-#startBtn:hover, #restartBtn:hover {
-    background-color: #00b4ff;
-    transform: scale(1.05);
-}
-
-@keyframes pulse {
-    0% { opacity: 0.8; }
-    50% { opacity: 1; transform: scale(1.05); }
-    100% { opacity: 0.8; }
+/* Keeps your fire button active and clickable */
+#mobileFireBtn {
+    pointer-events: auto;
 }
