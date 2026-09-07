@@ -2,31 +2,25 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Space Alien Battle</title>
+    <!-- Normal link to your separate stylesheet -->
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
     <div class="game-container">
-        <!-- Main Entry Initializer Overlay -->
-        <div id="startScreen" class="overlay">
-            <h1>SPACE INVADERS</h1>
-            <p>Survival time determines the enemy difficulty scaling.</p>
-            <button id="startBtn">LAUNCH SYSTEM</button>
-        </div>
-
-        <!-- UI Scoreboard Panels -->
+        <!-- UI Dashboard Overlay -->
         <div class="ui-panel">
             <div class="score-box">SCORE: <span id="scoreVal">0</span></div>
             <div id="difficultyDisplay" class="mode-box">DANGER: 1.0x</div>
             <div class="health-box">HP: <span id="hpVal">100</span>%</div>
         </div>
 
-        <!-- The Canvas display slate -->
+        <!-- The Canvas viewport display screen -->
         <canvas id="gameCanvas" width="600" height="600"></canvas>
 
-                <!-- Dynamic Mobile Action Controllers Button Overlay -->
+        <!-- Dynamic Mobile Action Controllers Button Overlay -->
         <div class="controls-overlay">
             <div class="movement-arrows">
                 <button id="mobileLeftBtn">◀</button>
@@ -35,7 +29,14 @@
             <button id="mobileFireBtn">🔥 FIRE</button>
         </div>
 
-        <!-- Game Over display layers -->
+        <!-- Start Game Main Menu Interface Overlay -->
+        <div id="startScreen" class="overlay">
+            <h1>SPACE INVADERS</h1>
+            <p>Survival time determines the enemy difficulty scaling.</p>
+            <button id="startBtn">LAUNCH SYSTEM</button>
+        </div>
+
+        <!-- Game Over Screen Overlay -->
         <div id="gameOverScreen" class="overlay hidden">
             <h1>GAME OVER</h1>
             <p>The armada overwhelmed your defense sector.</p>
@@ -43,6 +44,7 @@
         </div>
     </div>
 
+    <!-- Link to your game logic file -->
     <script src="script.js"></script>
 </body>
 </html>
