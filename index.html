@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Space Alien Battle</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="game-container">
+        <!-- Main Entry Initializer Overlay -->
+        <div id="startScreen" class="overlay">
+            <h1>SPACE INVADERS</h1>
+            <p>Survival time determines the enemy difficulty scaling.</p>
+            <button id="startBtn">LAUNCH SYSTEM</button>
+        </div>
+
+        <!-- UI Scoreboard Panels -->
+        <div class="ui-panel">
+            <div class="score-box">SCORE: <span id="scoreVal">0</span></div>
+            <div id="difficultyDisplay" class="mode-box">DANGER: 1.0x</div>
+            <div class="health-box">HP: <span id="hpVal">100</span>%</div>
+        </div>
+
+        <!-- The Canvas display slate -->
+        <canvas id="gameCanvas" width="600" height="600"></canvas>
+
+        <!-- Dynamic Action Controller Button -->
+        <div class="controls-overlay">
+            <button id="mobileFireBtn">🔥 FIRE</button>
+        </div>
+
+        <!-- Game Over display layers -->
+        <div id="gameOverScreen" class="overlay hidden">
+            <h1>GAME OVER</h1>
+            <p>The armada overwhelmed your defense sector.</p>
+            <button id="restartBtn">RELAUNCH</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
